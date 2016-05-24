@@ -9,7 +9,7 @@ public class Provider: Vapor.Provider {
         self.renderer = renderer
     }
 
-    public func boot(application: Application) {
+    public func boot(with application: Application) {
         if renderer.templateLoader == nil {
             renderer.templateLoader = TemplateLoader(paths: [Path(application.viewsDir)])
         }

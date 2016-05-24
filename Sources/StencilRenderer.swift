@@ -10,7 +10,7 @@ public class StencilRenderer: RenderDriver {
         self.templateLoader = templateLoader
     }
 
-    public func render(template template: String, context: [String: Any]) throws -> String {
+    public func render(template: String, context: [String: Any]) throws -> String {
         let c = Context(dictionary: context, namespace: self.namespace)
 
         if let loader = self.templateLoader {
