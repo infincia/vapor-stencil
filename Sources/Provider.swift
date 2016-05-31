@@ -1,5 +1,5 @@
 import Stencil
-import PathKit
+//import PathKit
 import Vapor
 
 public class Provider: Vapor.Provider {
@@ -11,7 +11,7 @@ public class Provider: Vapor.Provider {
 
     public func boot(with application: Application) {
         if renderer.templateLoader == nil {
-            renderer.templateLoader = TemplateLoader(paths: [Path(application.viewsDir)])
+            renderer.templateLoader = TemplateLoader(paths: [application.viewsDir])
         }
 
         View.renderers[".stencil"] = renderer
